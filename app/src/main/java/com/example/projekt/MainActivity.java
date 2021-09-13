@@ -58,6 +58,13 @@ public class MainActivity extends AppCompatActivity {
         double todayDistance = sharedPreferences.getFloat("distance_day_" + dayDate, 0);
         double monthDistance = sharedPreferences.getFloat("distance_month_" + monthDate, 0);
 
+        if (todayDistance != 0) {
+            dayDistanceLabel.setText(String.valueOf(todayDistance));
+        }
+        if (monthDistance != 0) {
+            monthDistanceLabel.setText(String.valueOf(monthDistance));
+        }
+
         locationListener = new LocationListener() {
 
             @Override
