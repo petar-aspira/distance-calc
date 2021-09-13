@@ -45,7 +45,11 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
         Button button = findViewById(R.id.resetAll);
-        button.setOnClickListener(v -> editor.clear().apply());
+        button.setOnClickListener(v -> {
+            editor.clear().apply();
+            dayDistanceLabel.setText("0");
+            monthDistanceLabel.setText("0");
+        });
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("uuuu-MM-dd");
         DateTimeFormatter mtf = DateTimeFormatter.ofPattern("uuuu-MM");
