@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = this.getPreferences(MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        Button button = (Button) findViewById(R.id.resetAll);
+        Button button = findViewById(R.id.resetAll);
         button.setOnClickListener(v -> editor.clear().apply());
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("uuuu-MM-dd");
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                     editor.putFloat("previous_lat", (float) location.getLatitude());
                     editor.putFloat("previous_long", (float) location.getLongitude());
                     editor.putFloat("distance_day_" + dayDate, (float) (todayDistance + distance));
-                    editor.putFloat("distance_month_" + dayDate, (float) (monthDistance + distance));
+                    editor.putFloat("distance_month_" + monthDate, (float) (monthDistance + distance));
 
                     dayDistanceLabel.setText(String.valueOf(todayDistance + distance));
                     monthDistanceLabel.setText(String.valueOf(monthDistance + distance));
